@@ -1,0 +1,49 @@
+#links
+#1
+echo "Текст текст текст" > original.txt
+#2
+ln original.txt hard_original.txt
+#3
+ls -l hard_original.txt
+ls -ld hard_original.txt | awk '{print $2}'
+#4
+ln -s original.txt soft_original.txt
+#5
+echo "test" | tee -a hard_original.txt soft_original.txt
+#2 записи
+#6
+rm original.txt
+#7
+ls -ld hard_original.txt | awk '{print $2}'
+#8
+cat soft_original.txt
+#Нет
+
+#bash
+#1
+export my_name=Dmitriy
+#2
+PS1="Grudin"
+export PS1
+#3
+say=echo
+$say $my_name
+#4
+echo $HOME
+echo $USER
+
+#User 
+#1
+id
+#2
+sudo useradd -s /usr/bin/sh -m student3_3
+echo "gadfg$1&)=- 354ds2xw&%34rcswfelgs34dvsf@" > parol.txt
+echo "gadfg$1&)=- 354ds2xw&%34rcswfelgs34dvsf@" >> parol.txt
+sudo passwd student3_3< parol.txt
+#3
+sudo usermod -a -G STUDENTS student3_3
+#4
+sudo passwd student3 < parol.txt
+
+#Sudo
+date +"%Y-%m-%d %T" | sudo tee /home/anyuser/Grudin.txt
